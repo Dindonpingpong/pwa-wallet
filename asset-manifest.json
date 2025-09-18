@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pwa-wallet/static/css/main.e6c13ad2.css",
+    "main.js": "/pwa-wallet/static/js/main.9c492584.js",
+    "static/js/453.5d1f8fb9.chunk.js": "/pwa-wallet/static/js/453.5d1f8fb9.chunk.js",
+    "index.html": "/pwa-wallet/index.html",
+    "main.e6c13ad2.css.map": "/pwa-wallet/static/css/main.e6c13ad2.css.map",
+    "main.9c492584.js.map": "/pwa-wallet/static/js/main.9c492584.js.map",
+    "453.5d1f8fb9.chunk.js.map": "/pwa-wallet/static/js/453.5d1f8fb9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9c492584.js"
+  ]
+}
