@@ -4,6 +4,7 @@ import {
   TextField,
   Button,
   Grid,
+  Box,
   Typography,
   MenuItem,
   InputAdornment
@@ -17,20 +18,18 @@ const currencies = [
   { value: 'VND', symbol: 'đ', label: 'Донг' }
 ];
 
-const ExpenseForm = ({ onAddTransaction, wallets }) => {
+const IncomeForm = ({ onAddTransaction, wallets }) => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
-  const [category, setCategory] = useState('Еда');
+  const [category, setCategory] = useState('Зарплата');
   const [walletId, setWalletId] = useState(wallets[0]?.id || '');
 
-  const expenseCategories = [
-    'Еда',
-    'Транспорт',
-    'Жилье',
-    'Развлечения',
-    'Здоровье',
-    'Одежда',
-    'Образование',
+  const incomeCategories = [
+    'Зарплата',
+    'Фриланс',
+    'Инвестиции',
+    'Подарок',
+    'Возврат долга',
     'Прочее'
   ];
 
@@ -44,7 +43,7 @@ const ExpenseForm = ({ onAddTransaction, wallets }) => {
       amount: parseFloat(amount),
       category,
       walletId: parseInt(walletId),
-      type: 'expense'
+      type: 'income'
     };
 
     onAddTransaction(transaction);
@@ -52,7 +51,7 @@ const ExpenseForm = ({ onAddTransaction, wallets }) => {
     // Сброс формы
     setTitle('');
     setAmount('');
-    setCategory('Еда');
+    setCategory('Зарплата');
   };
 
   const selectedWallet = wallets.find(w => w.id === parseInt(walletId));
@@ -60,15 +59,15 @@ const ExpenseForm = ({ onAddTransaction, wallets }) => {
 
   return (
     <Paper elevation={3} sx={{ p: 3, mb: 3 }}>
-      <Typography variant="h6" gutterBottom color="error.main">
-        💸 Добавить расход
+      <Typography variant="h6" gutterBottom color="success.main">
+        💵 Добавить доход
       </Typography>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Описание расхода"
+              label="Описание дохода"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
@@ -101,7 +100,7 @@ const ExpenseForm = ({ onAddTransaction, wallets }) => {
               onChange={(e) => setCategory(e.target.value)}
               required
             >
-              {expenseCategories.map((cat) => (
+              {incomeCategories.map((cat) => (
                 <MenuItem key={cat} value={cat}>
                   {cat}
                 </MenuItem>
@@ -135,12 +134,12 @@ const ExpenseForm = ({ onAddTransaction, wallets }) => {
             <Button
               type="submit"
               variant="contained"
-              color="error"
+              color="success"
               fullWidth
               sx={{ height: '56px' }}
               startIcon={<AddIcon />}
             >
-              Добавить расход
+              Добавить доход
             </Button>
           </Grid>
         </Grid>
@@ -149,4 +148,4 @@ const ExpenseForm = ({ onAddTransaction, wallets }) => {
   );
 };
 
-export default ExpenseForm;
+export default IncomeForm;

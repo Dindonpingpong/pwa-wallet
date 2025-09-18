@@ -1,6 +1,6 @@
 {
-  "short_name": "Дневник расходов",
-  "name": "Дневник учета расходов",
+  "short_name": "Финансовый менеджер",
+  "name": "Учет доходов и расходов с мультивалютностью",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,5 +11,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#2e7d32",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "categories": ["finance", "productivity"]
 }
